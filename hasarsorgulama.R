@@ -90,7 +90,7 @@ main.frame <- main.frame[[1]]
 options.city <- search_city$findChildElements(using = "xpath","option")
 ##Sys.sleep içerisindeki rakamları düşürerek hızı artırabilirsiniz, fakat firefox ve sitenin tepki süresine göre hata alınabilir. 
 
-for (city in 8:length(options.city)) {
+for (city in 1:length(options.city)) {
   temp.options.city <- options.city[[city]]
   temp.options.city$clickElement()
   options.ilce <- search_ilce$findChildElements(using = "xpath","option")
