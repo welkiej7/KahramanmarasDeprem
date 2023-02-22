@@ -1,4 +1,11 @@
 
+##Muhtemel hatalar
+# Java hatası, eğer işlemi yapan makinede java yüklü olmak zorunda. https://www.java.com/en/download/ 'dan yüklenebilir.
+# Firefox hatası, makine içerisinde firefox olmak zorunda.
+#Selenium hatası: eğer hata id içeriklerinin uyuşmaması ise terminalde "killall -9 java" komutunu çalıştırın.  Daha sonrasında script i tekrar çalıştırın.
+#subscript out of bounds hatası: İnternet hızı yüzünden veri yeterince hızlı indirelemediği için listelerin boyutları uyuşmamakta, sys.sleep seçeneklerini 
+#artırarak düzeltilebilir. 
+
 
 message("For Doğruluk Payı®
           by Onur Tuncay Bal, Simge Akkaş
@@ -109,7 +116,7 @@ for (city in 8:length(options.city)) {
       page <- read_html(source.unlist)
       html_table(page)[1] -> temp.frame
       rbind(temp.frame[[1]],main.frame) -> main.frame
-      write.csv(main.frame, "~/main.frame200223-hatay-2.csv")
+      write.csv(main.frame, "~/main.frame.csv")
       
     }
   }
