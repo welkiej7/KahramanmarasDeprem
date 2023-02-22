@@ -75,15 +75,19 @@ source.unlist <- source%>%unlist()
 page <- read_html(source.unlist)
 html_table(page)[1] -> main.frame
 main.frame <- main.frame[[1]]
-View(main.frame)
+
+
+
 
 
 options.city <- search_city$findChildElements(using = "xpath","option")
+##Sys.sleep içerisindeki rakamları düşürerek hızı artırabilirsiniz, fakat firefox ve sitenin tepki süresine göre hata alınabilir. 
+
 for (city in 8:length(options.city)) {
   temp.options.city <- options.city[[city]]
   temp.options.city$clickElement()
   options.ilce <- search_ilce$findChildElements(using = "xpath","option")
-  Sys.sleep(1)
+  Sys.sleep(2)
   for (ilce in 5:length(options.ilce)) {
     temp.options.ilce <- options.ilce[[ilce]]
     temp.options.ilce$clickElement()
@@ -110,4 +114,7 @@ for (city in 8:length(options.city)) {
     }
   }
 }
+
+##Tekrar eden satırlar var, yapı kimlik no kolonunu NA ve NON- Na olarak ayırıp, distinct fonksiyonu ile tekrar eden satırları silip tekrar birleştirebilirsiniz. 
+
 
